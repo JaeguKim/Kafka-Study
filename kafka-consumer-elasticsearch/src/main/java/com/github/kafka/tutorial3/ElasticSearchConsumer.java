@@ -32,27 +32,6 @@ public class ElasticSearchConsumer {
                 RestClient.builder(
                         new HttpHost(hostname, 9200, "http"),
                         new HttpHost(hostname, 9201, "http")));
-//
-//        ActionListener<IndexResponse> listener = new ActionListener<IndexResponse>() {
-//            @Override
-//            public void onResponse(IndexResponse indexResponse) {
-//                String index = indexResponse.getIndex();
-//                String type = indexResponse.getType();
-//                String id = indexResponse.getId();
-//                long version = indexResponse.getVersion();
-//                logger.info(String.format("result : %s, index : %s, type : %s, id : %s"), indexResponse.getResult(), index, type, id);
-//                if (indexResponse.getResult() == DocWriteResponse.Result.CREATED) {
-//                    logger.info("document is created!");
-//                }
-//
-//            }
-//
-//            @Override
-//            public void onFailure(Exception e) {
-//                logger.error(e.toString());
-//            }
-//        };
-
         return client;
     }
 
